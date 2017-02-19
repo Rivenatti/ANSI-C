@@ -3,7 +3,7 @@
 
 int main(void){
 
-    float a, b, n, d, pierwiastek = 0, x, fx, pi;
+    float a, b, n, d, pierwiastek = 0, x1, x2, fx1, fx2, pi;
     int i;
 
     printf("Prosze podac a: ");
@@ -16,9 +16,11 @@ int main(void){
     d = (b-a)/n;
 
     for(i = 1; i < n; i++){
-        x = a+i*d;
-        fx = -(x*x)+12.0;
-        pi = fx*d;
+        x1 = a+d*(i-1);
+        x2 = a+(i*d);
+        fx1 = -(x1*x1)+12.0;
+        fx2 = -(x2*x2)+12.0;
+        pi = ((fx1+fx2)*d)/2.0;
         pierwiastek += pi;
     }
 
